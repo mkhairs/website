@@ -119,10 +119,12 @@
         .hero-float-img {
             display: block;
             width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            border-radius: 1.25rem;
-            filter: drop-shadow(0 20px 32px rgba(6, 78, 59, 0.2));
+            height: auto;
+            object-fit: contain;
+            background: transparent;
+            filter:
+                drop-shadow(0 8px 16px rgba(6, 78, 59, 0.18))
+                drop-shadow(0 24px 40px rgba(234, 88, 12, 0.12));
         }
         @media (prefers-reduced-motion: reduce) {
             .hero-float-wrap,
@@ -208,18 +210,16 @@
             <div class="reveal-3d flex justify-center lg:justify-end">
                 <div class="relative w-full max-w-md lg:max-w-lg">
                     <div class="absolute inset-4 bg-gradient-to-br from-orange-200/40 to-emerald-200/40 rounded-[2rem] blur-2xl -z-10"></div>
-                    <div class="hero-float-wrap pt-2 pb-8">
+                    <div class="hero-float-wrap pt-2 pb-10">
                         <div class="hero-float-shadow" aria-hidden="true"></div>
-                        <div class="relative bg-white rounded-[1.25rem] p-2 sm:p-3 shadow-2xl shadow-emerald-900/10 ring-1 ring-orange-100">
-                            <img
-                                src="plecing2.png"
-                                alt="Piring plecing kangkung dengan sambal merah dan taburan kacang tanah"
-                                class="hero-float-img"
-                                width="600"
-                                height="450"
-                                onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'img-fallback aspect-[4/3] rounded-2xl w-full\' role=\'img\' aria-label=\'Gambar plecing kangkung\'>🥬🌶️</div>'"
-                            >
-                        </div>
+                        <img
+                            src="plecing2.png"
+                            alt="Piring plecing kangkung dengan sambal merah dan taburan kacang tanah"
+                            class="hero-float-img relative z-10"
+                            width="600"
+                            height="600"
+                            onerror="this.onerror=null;this.outerHTML='<div class=\'img-fallback aspect-square rounded-2xl w-full max-w-sm mx-auto\' role=\'img\' aria-label=\'Gambar plecing kangkung\'>🥬🌶️</div>'"
+                        >
                     </div>
                     <div class="absolute -bottom-3 right-4 sm:right-0 bg-white px-5 py-3 rounded-2xl shadow-lg border border-orange-50 flex items-center gap-3">
                         <span class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-lg" aria-hidden="true">✓</span>
